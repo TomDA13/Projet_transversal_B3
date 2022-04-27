@@ -1,0 +1,24 @@
+res=[]
+n=2
+zone=180/n
+scan=[[15,95,122],[15,280,250],[15,360,49],[14,360,250]]
+for i in range(len(scan)):
+   if ((scan[i][0]>=15) and (scan[i][1]<90 or scan[i][1]>270)):
+     res.append(scan[i])  
+for i in range(len(res)):
+  if res[i][1]>=270:
+    a=res[i][1]-180
+    res[i][1]=a
+j=1
+for i in range(len(res)):
+
+  c=0
+  if res[i][1]<j*zone:
+    if res[i][2]<50:
+      c=+1
+      if c==5:
+        print(0)
+  else:
+    j=+1
+    i=i-1
+    
